@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Supervision Assurance</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- jQuery (CDN) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <header>
+            <h1>Plateforme de Supervision</h1>
+    </header>
+    <div class="main-content">
+        <nav class="navbar">
+            <ul>
+                <h2>Tableau de bord</h2>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="profilage.html">Profilage</a></li>
+                <li><a href="operations.html">Opérations</a></li>
+                <li><a href="alerte.html">Alertes</a></li>
+                <li><a href="compte.html" class="active">Comptes</a></li>
+            </ul>
+            </nav>
+            <main>       
+                <!-- SECTION COMPTES -->
+                <section id="comptes">
+                    <h2>Suivi des comptes</h2>
+                   <button id="btnAfficherFormAjoutCompte">+ Ajouter un compte</button>
+
+<!-- Formulaire d'ajout de compte -->
+<form id="formAjoutCompte" style="display: none; margin-top: 20px;">
+    <label>Numéro de compte :
+        <input type="text" id="ajoutCompte" required>
+    </label>
+    <label>Type :
+        <input type="text" id="ajoutType" required>
+    </label>
+    <label>Solde :
+        <input type="number" id="ajoutSolde" required>
+    </label>
+    <label>Dernier mouvement :
+        <input type="date" id="ajoutDernierMouvement" required>
+    </label>
+    <label>État :
+        <select id="ajoutEtat">
+            <option value="Normale">Normale</option>
+            <option value="Découvert">Découvert</option>
+        </select>
+    </label>
+    <button type="submit">Enregistrer</button>
+    <button type="button" id="annulerAjoutCompte">Annuler</button>
+</form>
+
+                    <table id="tableComptes">
+                        <thead>
+                            <tr>
+                                <th>Compte</th>
+                                <th>Type</th>
+                                <th>Solde</th>
+                                <th>Dernier mouvement</th>
+                                <th>État</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Rempli dynamiquement en JS -->
+                        </tbody>
+                    </table>
+                </section>
+            </main>
+        </div>
+    <footer>
+        &copy; 2025 - CIMA
+    </footer>
+
+    <!-- JS -->
+    <script src="script.js"></script>
+</body>
+</html>

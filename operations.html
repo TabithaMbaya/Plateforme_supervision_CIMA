@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Profilage des clients</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <header>
+            <h1>Plateforme de Supervision</h1>
+    </header>
+    <div class="main-content">
+        <nav class="navbar">
+            <ul>
+                <h2>Tableau de bord</h2>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="profilage.html" >Profilage</a></li>
+                <li><a href="operations.html" class="active">Opérations</a></li>
+                <li><a href="alerte.html">Alertes</a></li>
+                <li><a href="compte.html">Comptes</a></li>
+            </ul>
+        </nav>
+        <main>
+            <section id="operations">
+                <!-- SECTION PROFILAGE DES CLIENTS -->
+                 <h2>Filtrer les opérations</h2>
+                <!-- FORMULAIRE DE FILTRAGE DES OPÉRATIONS -->
+                <section id="filtrage">
+                    <form id="filtreForm">
+                        <label>Date :
+                            <input type="date" id="filtreDate">
+                        </label>
+                        <label>Montant supérieur à :
+                            <input type="number" id="filtreMontant" min="0">
+                        </label>
+                        <label>Client :
+                            <input type="text" id="filtreClient">
+                        </label>
+                        <label>Risque :
+                            <select id="filtreRisque">
+                                <option value="">Tous</option>
+                                <option value="false">Faible</option>
+                                <option value="true">Élevé</option>
+                            </select>
+                        </label>
+                        <button type="button" id="btnFiltrer">Filtrer</button>
+                    </form>
+                </section>
+
+                <!-- TABLEAU DYNAMIQUE DES OPÉRATIONS -->
+                
+                     <h2>Liste des opérations</h2>
+    
+    <button id="btnAfficherFormAjout">+ Ajouter une opération</button>
+    
+    <!-- Formulaire d'ajout masqué au début -->
+    <form id="formAjoutOperation" style="display: none; margin-top: 20px;">
+        <label>Date :
+            <input type="date" id="ajoutDate" required>
+        </label>
+        <label>Client :
+            <input type="text" id="ajoutClient" required>
+        </label>
+        <label>Montant :
+            <input type="number" id="ajoutMontant" required>
+        </label>
+        <label>Type :
+            <input type="text" id="ajoutType" required>
+        </label>
+        <label>Risque :
+            <select id="ajoutRisque">
+                <option value="false">Faible</option>
+                <option value="true">Élevé</option>
+            </select>
+        </label>
+        <label>Commentaire :
+            <input type="text" id="ajoutCommentaire">
+        </label>
+        <button type="submit">Enregistrer</button>
+        <button type="button" id="annulerAjout">Annuler</button>
+    </form>  
+
+    <form id="formModifierOperation" style="display: none; margin-top: 20px;">
+    <input type="hidden" id="modifId">
+    <label>Date : <input type="date" id="modifDate" required></label>
+    <label>Client : <input type="text" id="modifClient" required></label>
+    <label>Montant : <input type="number" id="modifMontant" required></label>
+    <label>Type : <input type="text" id="modifType" required></label>
+    <label>Risque :
+        <select id="modifRisque">
+            <option value="false">Faible</option>
+            <option value="true">Élevé</option>
+        </select>
+    </label>
+    <label>Commentaire : <input type="text" id="modifCommentaire"></label>
+    <button type="submit">Enregistrer</button>
+    <button type="button" id="annulerModif">Annuler</button>
+</form>
+
+
+                    <table id="tableOperations">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Date</th>
+                                <th>Client</th>
+                                <th>Montant</th>
+                                <th>Type</th>
+                                <th>Risque</th>
+                                <th>Commentaire</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- lignes générées dynamiquement en JS -->
+                        </tbody>
+                    </table>
+                </section>
+
+            </main>
+      </div>
+    <footer>
+        &copy; 2025 - CIMA
+    </footer>
+
+    <!-- Script -->
+    <script src="scriptOperation.js"></script>
+</body>
+</html>

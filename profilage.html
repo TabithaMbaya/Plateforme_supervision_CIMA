@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Profilage des clients</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<!-- ... même contenu dans <head> ... -->
+
+<body>
+    <header>
+        <h1>Plateforme de Supervision</h1>
+    </header>
+
+    <div class="main-content">
+        <nav class="navbar">
+            <ul>
+                <h2>Tableau de bord</h2>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="profilage.html" class="active">Profilage</a></li>
+                <li><a href="operations.html">Opérations</a></li>
+                <li><a href="alerte.html">Alertes</a></li>
+                <li><a href="compte.html">Comptes</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <section id="profilage">
+
+                <!-- Filtres -->      
+                 <h2>Filtrer des clients</h3>
+                <form id="formProfilage">
+                    <label>Type :
+                        <select id="filtreTypeClient">
+                            <option value="">Tous</option>
+                            <option value="particulier">Particulier</option>
+                            <option value="entreprise">Entreprise</option>
+                        </select>
+                    </label>
+                    <label>Produit :
+                        <select id="filtreProduit">
+                            <option value="">Tous</option>
+                            <option value="auto">Auto</option>
+                            <option value="vie">Vie</option>
+                            <option value="santé">Santé</option>
+                        </select>
+                    </label>
+                    <label>Risque :
+                        <select id="filtreRisqueClient">
+                            <option value="">Tous</option>
+                            <option value="faible">Faible</option>
+                            <option value="moyen">Moyen</option>
+                            <option value="élevé">Élevé</option>
+                        </select>
+                    </label>
+                    <button type="button" id="btnFiltrer">Filtrer</button>
+                </form>
+
+
+                <h2>Liste des clients</h2>
+                <button id="afficherFormAjout">+ Ajouter un client</button>
+
+                <!-- Formulaire d'ajout -->
+                <form id="formClient" style="display: none;">
+                    <label>Nom :
+                        <input type="text" id="ClientNom" required>
+                    </label>
+                    <label>Type :
+                        <select id="ClientType">
+                            <option value="particulier">Particulier</option>
+                            <option value="entreprise">Entreprise</option>
+                        </select>
+                    </label>
+                    <label>Produit :
+                        <select id="ClientProduit">
+                            <option value="auto">Auto</option>
+                            <option value="vie">Vie</option>
+                            <option value="santé">Santé</option>
+                        </select>
+                    </label>
+                    <label>Risque :
+                        <select id="ClientRisque">
+                            <option value="faible">Faible</option>
+                            <option value="moyen">Moyen</option>
+                            <option value="élevé">Élevé</option>
+                        </select>
+                    </label>
+                    <button type="submit">Enregistrer</button>
+                    <button type="button" id="annulerAjout">Annuler</button>
+                </form>
+
+                <!-- Formulaire de modification -->
+                <form id="formModification" style="display: none;">
+                    <h2>Modifier le client</h2>
+                    <input type="hidden" id="modifIndex">
+                    <label>Nom :
+                        <input type="text" id="modifNom" required>
+                    </label>
+                    <label>Type :
+                        <select id="modifType">
+                            <option value="particulier">Particulier</option>
+                            <option value="entreprise">Entreprise</option>
+                        </select>
+                    </label>
+                    <label>Produit :
+                        <select id="modifProduit">
+                            <option value="auto">Auto</option>
+                            <option value="vie">Vie</option>
+                            <option value="santé">Santé</option>
+                        </select>
+                    </label>
+                    <label>Risque :
+                        <select id="modifRisque">
+                            <option value="faible">Faible</option>
+                            <option value="moyen">Moyen</option>
+                            <option value="élevé">Élevé</option>
+                        </select>
+                    </label>
+                    <button type="submit">Modifier</button>
+                    <button type="button" id="annulerModif">Annuler</button>
+                </form>
+
+                
+                <ul id="listeClients">
+                    <!-- Clients injectés ici par JS -->
+                </ul>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        &copy; 2025 - CIMA
+    </footer>
+
+    <!-- Script -->
+    <script src="scriptClient.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+[
+  {
+    "nom": "Jean Dupont",
+    "type": "particulier",
+    "produit": "auto",
+    "risque": "moyen"
+  },
+  {
+    "nom": "Alpha Corp",
+    "type": "entreprise",
+    "produit": "vie",
+    "risque": "élevé"
+  },
+  {
+    "nom": "Claire Mba",
+    "type": "particulier",
+    "produit": "santé",
+    "risque": "faible"
+  },
+  {
+    "nom": "Beta Assurances",
+    "type": "entreprise",
+    "produit": "auto",
+    "risque": "moyen"
+  },
+  {
+    "nom": "Sophie Ndiaye",
+    "type": "particulier",
+    "produit": "habitation",
+    "risque": "élevé"
+  },
+  {
+    "nom": "Gamma Services",
+    "type": "entreprise",
+    "produit": "santé",
+    "risque": "moyen"
+  }
+]

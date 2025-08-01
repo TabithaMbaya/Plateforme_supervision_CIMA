@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Supervision Assurance</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- jQuery (CDN) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+     <div class="main-content">
+            <!-- HEADER + NAVIGATION -->
+            <header>
+                <h1>Plateforme de Supervision</h1>
+            </header>
+            <nav class="navbar">
+            <ul>
+                <h2>Tableau de bord</h2>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="profilage.html" >Profilage</a></li>
+                <li><a href="operations.html">Opérations</a></li>
+                <li><a href="alerte.html" class="active">Alertes</a></li>
+                <li><a href="compte.html">Comptes</a></li>
+            </ul>
+        </nav>
+
+            <main>
+                <section id="alertes" style="display: none;">
+                    <div class="alerte">
+                        ⚠️ Opérations suspectes détectées !
+                        <button id="exportAlertes">Exporter en JSON</button>
+                    </div>
+                </section>
+                <section id="listeAlertes">
+                <h2>Liste des opérations suspectes</h2>
+                <table id="tableAlertes">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Date</th>
+                            <th>Client</th>
+                            <th>Montant</th>
+                            <th>Type</th>
+                            <th>Risque</th>
+                            <th>Commentaire</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </section>
+
+         </main>
+        </div>
+        <footer>
+        &copy; 2025 - CIMA
+    </footer>
+
+    <!-- JS -->
+    <script src="scriptOperation.js"></script>
+</body>
+</html>

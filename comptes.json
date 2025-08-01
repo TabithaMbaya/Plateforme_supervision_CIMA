@@ -1,0 +1,45 @@
+[
+    {
+        "compte": "BICIG-001",
+        "type": "Bancaire",
+        "solde": 1525000,
+        "dernier_mouvement": "2025-07-29",
+        "etat": "Normal"
+    },
+    {
+        "compte": "LaPoste-002",
+        "type": "Postal",
+        "solde": -25000,
+        "dernier_mouvement": "2025-07-28",
+        "etat": "Découvert"
+    },
+
+    {
+        "compte": "CFA-003",
+        "type": "Monétaire",
+        "solde": 500000,
+        "dernier_mouvement": "2025-07-27",
+        "etat": "Normal"
+    },
+    {
+        "compte": "Assur-004",
+        "type": "Assurance",
+        "solde": 1200000,
+        "dernier_mouvement": "2025-07-26",
+        "etat": "Normal"
+    },
+    {
+        "compte": "Invest-005",
+        "type": "Investissement",
+        "solde": 3000000,
+        "dernier_mouvement": "2025-07-25",
+        "etat": "Découvert"
+    },
+    {
+        "compte": "Epargne-006",
+        "type": "Épargne",
+        "solde": 750000,
+        "dernier_mouvement": "2025-07-24",
+        "etat": "Normal"
+    }
+]
