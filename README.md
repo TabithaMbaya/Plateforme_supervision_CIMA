@@ -96,7 +96,7 @@ L’interface est conçue pour être claire, intuitive, responsive, et conforme 
 
 ## Installation & Utilisation
 
-1. **Cloner le dépôt** ou copier les fichiers localement.
+1. (https://github.com/TabithaMbaya/Plateforme_supervision_CIMA.git)
 2. Placer `operations.json` et `comptes.json` dans le même dossier que les pages HTML.
 3. Ouvrir `operations.html` (ou autre page) dans un navigateur moderne.
 4. Utiliser le menu latéral pour naviguer.
