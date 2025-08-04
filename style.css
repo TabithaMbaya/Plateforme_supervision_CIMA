@@ -652,6 +652,7 @@ button[type="submit"] {
 }
 
 /* Bouton Modifier */
+.btn-modifier-compte,
 .btn-modifier {
     background-color: #3498db;
     color: white;
@@ -719,7 +720,7 @@ button[type="submit"] {
   border-radius: 10px;
   font-size: 1em;
 }
-
+#formModifierCompte,
 #formModifierOperation {
  display: flex;
   flex-wrap: wrap;
@@ -730,7 +731,7 @@ button[type="submit"] {
   border-left: 4px solid  #8FCB9B;
   border-radius: 8px;
 }
-
+#formModifierCompte label,
 #formModifierOperation label {
    display: flex;
   flex-direction: column;
@@ -738,7 +739,8 @@ button[type="submit"] {
   color: #333;
   flex: 1 1 200px;
 }
-
+#formModifierCompte input,
+#formModifierCompte select,
 #formModifierOperation input,
 #formModifierOperation select {
   padding: 0.5em;

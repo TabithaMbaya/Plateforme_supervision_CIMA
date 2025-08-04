@@ -176,12 +176,58 @@ $('#btnFiltrer').click(filtrerCompte); // Doit être dehors, tout en bas
                 <td>${cpt.dernier_mouvement}</td>
                 <td class="${cpt.etat === 'Découvert' ? 'alerte' : ''}">${cpt.etat}</td>
                 <td class="cell-actions">
+                    <button class="btn-modifier-compte">Modifier</button>
                     <button class="btn-supprimer-compte">Supprimer</button>
                 </td>
+
             </tr>`;
             tbody.append(row);
         });
     }
+
+    // Afficher le formulaire de modification avec les données du compte
+$('#tableComptes').on('click', '.btn-modifier-compte', function () {
+    const ligne = $(this).closest('tr');
+    const index = ligne.index();
+
+    const cellules = ligne.find('td');
+    $('#indexCompteModif').val(index);
+    $('#modifClient').val(cellules.eq(0).text());
+    $('#modifCompte').val(cellules.eq(1).text());
+    $('#modifType').val(cellules.eq(2).text());
+    $('#modifSolde').val(cellules.eq(3).text().replace(/[^0-9.-]+/g,""));
+    $('#modifDernierMouvement').val(cellules.eq(4).text());
+    $('#modifEtat').val(cellules.eq(5).text());
+
+    $('#formModifierCompte').slideDown();
+});
+
+// Appliquer les modifications
+$('#formModifierCompte').submit(function (e) {
+    e.preventDefault();
+
+    const index = $('#indexCompteModif').val();
+    const ligne = $('#tableComptes tbody tr').eq(index);
+
+    ligne.find('td').eq(0).text($('#modifClient').val());
+    ligne.find('td').eq(1).text($('#modifCompte').val());
+    ligne.find('td').eq(2).text($('#modifType').val());
+    ligne.find('td').eq(3).text(parseFloat($('#modifSolde').val()).toLocaleString() + ' FCFA');
+    ligne.find('td').eq(4).text($('#modifDernierMouvement').val());
+    ligne.find('td').eq(5)
+        .text($('#modifEtat').val())
+        .attr('class', $('#modifEtat').val() === 'Découvert' ? 'alerte' : '');
+
+    $('#formModifierCompte')[0].reset();
+    $('#formModifierCompte').slideUp();
+});
+
+// Annuler la modification
+$('#annulerModifCompte').click(function () {
+    $('#formModifierCompte')[0].reset();
+    $('#formModifierCompte').slideUp();
+});
+
 
     // Formulaire : afficher/masquer
     $('#btnAfficherFormAjoutCompte').click(function () {

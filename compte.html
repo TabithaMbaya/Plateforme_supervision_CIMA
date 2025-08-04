@@ -82,6 +82,36 @@
     <button type="submit">Enregistrer</button>
     <button type="button" id="annulerAjoutCompte">Annuler</button>
 </form>
+
+<!-- Formulaire de modification -->
+<form id="formModifierCompte" style="display: none; margin-top: 20px;">
+    <h3>Modifier un compte</h3>
+    <input type="hidden" id="indexCompteModif">
+    <label>Client :
+        <input type="text" id="modifClient" required>
+    </label>
+    <label>Numéro de compte :
+        <input type="text" id="modifCompte" required>
+    </label>
+    <label>Type :
+        <input type="text" id="modifType" required>
+    </label>
+    <label>Solde :
+        <input type="number" id="modifSolde" required>
+    </label>
+    <label>Dernier mouvement :
+        <input type="date" id="modifDernierMouvement" required>
+    </label>
+    <label>État :
+        <select id="modifEtat">
+            <option value="Normale">Normale</option>
+            <option value="Découvert">Découvert</option>
+        </select>
+    </label>
+    <button type="submit">Modifier</button>
+    <button type="button" id="annulerModifCompte">Annuler</button>
+</form>
+
                     <table id="tableComptes">
                         <thead>
                             <tr>
