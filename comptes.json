@@ -1,5 +1,6 @@
 [
     {
+        "client": "Alice Dupont",
         "compte": "BICIG-001",
         "type": "Bancaire",
         "solde": 1525000,
@@ -7,6 +8,7 @@
         "etat": "Normal"
     },
     {
+        "client": "Jane Smith",
         "compte": "LaPoste-002",
         "type": "Postal",
         "solde": -25000,
@@ -15,6 +17,7 @@
     },
 
     {
+        "client": "John Doe",
         "compte": "CFA-003",
         "type": "Monétaire",
         "solde": 500000,
@@ -22,6 +25,7 @@
         "etat": "Normal"
     },
     {
+        "client": "Marie Curie",
         "compte": "Assur-004",
         "type": "Assurance",
         "solde": 1200000,
@@ -29,6 +33,7 @@
         "etat": "Normal"
     },
     {
+        "client": "Pierre Martin",
         "compte": "Invest-005",
         "type": "Investissement",
         "solde": 3000000,

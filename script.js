@@ -99,6 +99,28 @@ $(document).ready(function () {
         });
     });
 
+
+    let comptes = [];
+     function filtrerCompte() {
+    const clientFiltre = $('#filtreClientCompte').val().toLowerCase();
+    const compteFiltre = $('#filtreCompte').val().toLowerCase();
+    const soldeFiltre = $('#filtreSolde').val();
+    const etatFiltre = $('#filtreEtat').val().toLowerCase();
+
+    const filtered = comptes.filter(c => {
+        const clientMatch = !clientFiltre || (c.client && c.client.toLowerCase().includes(clientFiltre));
+        const compteMatch = !compteFiltre || (c.compte && c.compte.toLowerCase().includes(compteFiltre));
+        const soldeMatch = !soldeFiltre || c.solde >= parseFloat(soldeFiltre);
+        const etatMatch = !etatFiltre || (c.etat && c.etat.toLowerCase() === etatFiltre);
+
+        return clientMatch && compteMatch && soldeMatch && etatMatch;
+    });
+
+    afficherComptes(filtered);
+}
+$('#btnFiltrer').click(filtrerCompte); // Doit être dehors, tout en bas
+
+
     function afficherGraphiqueComptes(comptes) {
     // Compter le nombre de comptes par état
     const stats = comptes.reduce((acc, compte) => {
@@ -133,13 +155,12 @@ $(document).ready(function () {
 
     function chargerComptes() {
     $.getJSON("comptes.json", function (data) {
+        comptes = data; // stocker globalement
         $('#nb-comptes').text(data.length);
         afficherComptes(data);
-        afficherGraphiqueComptes(data);  // <-- ici !
+        afficherGraphiqueComptes(data);
     });
 }
-
-
 
 
     function afficherComptes(comptes) {
@@ -148,6 +169,7 @@ $(document).ready(function () {
 
         comptes.forEach(cpt => {
             const row = `<tr>
+                <td>${cpt.client}</td>
                 <td>${cpt.compte}</td>
                 <td>${cpt.type}</td>
                 <td>${parseFloat(cpt.solde).toLocaleString()} FCFA</td>
@@ -171,6 +193,7 @@ $(document).ready(function () {
         e.preventDefault();
 
         const nouveauCompte = {
+            client: $('#ajoutClient').val(), 
             compte: $('#ajoutCompte').val(),
             type: $('#ajoutType').val(),
             solde: parseFloat($('#ajoutSolde').val()),
@@ -178,7 +201,9 @@ $(document).ready(function () {
             etat: $('#ajoutEtat').val()
         };
 
+
         const ligne = `<tr>
+            <td>${nouveauCompte.client }</td>   
             <td>${nouveauCompte.compte}</td>
             <td>${nouveauCompte.type}</td>
             <td>${nouveauCompte.solde.toLocaleString()} FCFA</td>

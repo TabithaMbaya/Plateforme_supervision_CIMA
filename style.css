@@ -281,7 +281,7 @@ tbody tr:hover {
 .risque-élevé { color: var(--danger); }
 
 /* SECTION FORMULAIRE PROFILAGE */
-#formProfilage {
+#formProfilage, #formFiltrageComptes {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
@@ -292,6 +292,14 @@ tbody tr:hover {
   border-radius: 8px;
  }
 
+ #formFiltrageComptes label{
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  color: #333;
+  flex: 1 1 200px;
+ }
+  
 #formProfilage label {
   display: flex;
   flex-direction: column;
@@ -299,8 +307,16 @@ tbody tr:hover {
   color: #333;
   flex: 1 1 200px;
 }
+#formFiltrageComptes select {
+  margin-top: 5px;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: white;
+  font-size: 14px;
+}
 
-#formProfilage select {
+#formProfilage select { 
   margin-top: 5px;
   padding: 8px;
   border-radius: 5px;

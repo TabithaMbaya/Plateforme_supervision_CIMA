@@ -26,7 +26,31 @@
                 <li><a href="compte.html" class="active">Comptes</a></li>
             </ul>
             </nav>
-            <main>       
+            <main>   
+                
+                
+<!-- Filtres -->      
+                 <h2>Filtrer des comptes</h3>
+                <form id="formFiltrageComptes">
+                    <label>Client :
+                        <input type="text" id="filtreClientCompte">
+                    </label>
+                    <label>Compte :
+                            <input type="text" id="filtreCompte">
+                    </label>
+                   <label>Solde supérieur à :
+                        <input type="number" id="filtreSolde" placeholder="Ex : 1000000">
+                    </label>
+                    <label>Etat:
+                   <select id="filtreEtat">
+                        <option value="">Tous</option>
+                        <option value="normal">Normal</option>
+                        <option value="découvert">Découvert</option>
+                    </select>
+                    </label>
+                    <button type="button" id="btnFiltrer">Filtrer</button>
+                </form>
+
                 <!-- SECTION COMPTES -->
                 <section id="comptes">
                     <h2>Suivi des comptes</h2>
@@ -34,6 +58,9 @@
 
 <!-- Formulaire d'ajout de compte -->
 <form id="formAjoutCompte" style="display: none; margin-top: 20px;">
+     <label>Client :
+        <input type="text" id="ajoutCompte" required>
+    </label>
     <label>Numéro de compte :
         <input type="text" id="ajoutCompte" required>
     </label>
@@ -55,10 +82,10 @@
     <button type="submit">Enregistrer</button>
     <button type="button" id="annulerAjoutCompte">Annuler</button>
 </form>
-
                     <table id="tableComptes">
                         <thead>
                             <tr>
+                                <th>Client</th>
                                 <th>Compte</th>
                                 <th>Type</th>
                                 <th>Solde</th>
