@@ -28,7 +28,7 @@ $(document).ready(function () {
                     Type : ${c.type} <br>
                     Produit : ${c.produit} <br>
                     Risque : <span class="risque-${c.risque.toLowerCase()}">${c.risque}</span>
-                    <button class="btn-modifier" data-index="${index}">Modifier</button>
+                    <button class="btn-modifier" data-index="${index}">🖋</button>
                     <button class="btn-supprimer" data-index="${index}" title="Supprimer">🗑️</button>
                 </li>
             `);

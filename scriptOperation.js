@@ -36,8 +36,8 @@ $(document).ready(function () {
                     <td>${op.risque ? 'élevé' : 'faible'}</td>
                     <td>${op.commentaire || ''}</td>
                     <td class="cell-actions">
-                        <button class="btn-modifier">Modifier</button>
-                        <button class="btn-supprimer">Supprimer</button>
+                        <button class="btn-modifier">🖋</button>
+                        <button class="btn-supprimer">🗑️</button>
                     </td>
                 </tr>
             `);
@@ -139,7 +139,7 @@ $(document).ready(function () {
                 <td>${nouvelleOperation.commentaire}</td>
                 <td class="cell-actions">
                     <button class="btn-modifier">Modifier</button>
-                    <button class="btn-supprimer">Supprimer</button>
+                    <button class="btn-supprimer">🗑️</button>
                 </td>
             </tr>
         `;

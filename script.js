@@ -176,8 +176,8 @@ $('#btnFiltrer').click(filtrerCompte); // Doit être dehors, tout en bas
                 <td>${cpt.dernier_mouvement}</td>
                 <td class="${cpt.etat === 'Découvert' ? 'alerte' : ''}">${cpt.etat}</td>
                 <td class="cell-actions">
-                    <button class="btn-modifier-compte">Modifier</button>
-                    <button class="btn-supprimer-compte">Supprimer</button>
+                    <button class="btn-modifier-compte">🖋</button>
+                    <button class="btn-supprimer-compte">🗑️</button>
                 </td>
 
             </tr>`;
